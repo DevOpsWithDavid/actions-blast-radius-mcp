@@ -22,4 +22,5 @@
 
 ## Open
 - Exact repo names in the org; check for clashes.
+- **(25 Nov 2026, coding agent)** `action_ref` for `local` (`./path`) and `docker://` refs: these have no GitHub `owner`/`name`/`ref`, so those columns are `NULL` for them (fixed a bug where I'd made them `NOT NULL`, contradicting `docs/ontology.md`'s own SQL sketch). Open question: does `subpath` hold the local path / docker image string for these, or should there be a separate `written_as` column holding the literal `uses:` text for every ref kind (useful for `explain_path` output, and avoids `subpath` carrying two different meanings)? Parked until the scanner actually writes `action_ref` rows (week 2); today's workflow parser just returns structs, no DB writes yet.
 - Questions from the coding agent go here with date and context.
