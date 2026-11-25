@@ -1,0 +1,9 @@
+name: Mixed refs
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/local-build
+      - uses: docker://alpine:3.19
+      - uses: actions/setup-node@main

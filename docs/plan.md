@@ -6,7 +6,7 @@ Work the first unticked item. Tick it when done and tests pass. Park new ideas i
 - [x] Spike: confirm a Rust MCP SDK, GitHub API client, YAML parser and SQLite crates; check maintenance status and record choices in `docs/decisions.md`
 - [x] Cargo workspace: `scanner`, `server`, shared `graph` crate
 - [x] SQLite schema from `docs/ontology.md` with migrations
-- [ ] Workflow parser for `uses:` in steps and jobs, with unit tests on fixture YAML
+- [x] Workflow parser for `uses:` in steps and jobs, with unit tests on fixture YAML
 
 ## Week 2: scanner
 - [ ] Org enumeration with pagination and rate-limit handling; token from env only

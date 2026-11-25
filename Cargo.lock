@@ -1672,6 +1672,7 @@ dependencies = [
  "octocrab",
  "serde",
  "serde-saphyr",
+ "serde_json",
  "tokio",
  "tracing",
  "tracing-subscriber",

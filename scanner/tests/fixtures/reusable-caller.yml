@@ -1,0 +1,7 @@
+name: Lint
+on: push
+jobs:
+  lint:
+    uses: DevOpsWithDavid/demo-workflows/.github/workflows/lint.yml@v1
+    with:
+      target: main
