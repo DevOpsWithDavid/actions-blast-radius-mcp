@@ -1,0 +1,46 @@
+schema_version: 1
+id: moved-tag
+description: >
+  Tag v1 of the bad action is repointed to a malicious commit.
+  Some repos pin a SHA, others the tag.
+
+target_owner: DevOpsWithDavid
+
+actions:
+  - name: demo-bad-action
+    type: composite
+    commits: [good1, bad1]
+    tags:
+      v1: { points_to: bad1, history: [good1, bad1] }
+    uses: []
+
+incident:
+  action: demo-bad-action
+  bad_commits: [bad1]
+  at_risk_refs: [v1]
+
+repos:
+  - name: svc-pinned
+    visibility: public
+    workflows:
+      - path: .github/workflows/ci.yml
+        jobs:
+          build:
+            steps:
+              - uses: demo-bad-action@bad1
+  - name: svc-tagged
+    visibility: public
+    workflows:
+      - path: .github/workflows/ci.yml
+        jobs:
+          build:
+            steps:
+              - uses: demo-bad-action@v1
+  - name: svc-safe
+    visibility: public
+    workflows:
+      - path: .github/workflows/ci.yml
+        jobs:
+          build:
+            steps:
+              - uses: demo-bad-action@good1

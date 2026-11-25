@@ -1,0 +1,9 @@
+/target
+*.db
+*.sqlite
+.env
+.env.*
+.DS_Store
+eval-results/
+.venv/
+node_modules/
