@@ -3,8 +3,8 @@
 Work the first unticked item. Tick it when done and tests pass. Park new ideas in `docs/v0.2.md`.
 
 ## Week 1: foundations and spike
-- [ ] Spike: confirm a Rust MCP SDK, GitHub API client, YAML parser and SQLite crates; check maintenance status and record choices in `docs/decisions.md`
-- [ ] Cargo workspace: `scanner`, `server`, shared `graph` crate
+- [x] Spike: confirm a Rust MCP SDK, GitHub API client, YAML parser and SQLite crates; check maintenance status and record choices in `docs/decisions.md`
+- [x] Cargo workspace: `scanner`, `server`, shared `graph` crate
 - [ ] SQLite schema from `docs/ontology.md` with migrations
 - [ ] Workflow parser for `uses:` in steps and jobs, with unit tests on fixture YAML
 

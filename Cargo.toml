@@ -1,0 +1,26 @@
+[workspace]
+resolver = "2"
+members = ["graph", "scanner", "server"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+# Shared across crates; keep versions pinned here so scanner/server/graph never drift.
+rusqlite = { version = "0.43", features = ["bundled"] }
+rusqlite_migration = "2.7"
+serde = { version = "1", features = ["derive"] }
+serde-saphyr = "2.2"
+octocrab = "0.54"
+rmcp = { version = "0.9", features = ["server"] }
+tokio = { version = "1", features = ["full"] }
+anyhow = "1"
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[profile.release]
+# Small, fast single-binary CLI/server; not worth tuning further for a portfolio project.
+lto = true
